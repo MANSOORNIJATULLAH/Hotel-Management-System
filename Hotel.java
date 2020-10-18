@@ -1,6 +1,6 @@
 public class Hotel{
 
-	static holder hotel_ob = new holder();
+	static Holder hotel_ob = new Holder();
 
 	static void features(int i){     //Lab4 The static Keyword 
 									//the concept of static function is implemented 
@@ -36,7 +36,7 @@ public class Hotel{
 
 				case 1:
 					for (j=0; j<10; j++){
-						
+
 					}
 			}
 
