@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Singleroom implements Serializable{
 
@@ -22,6 +23,6 @@ public class Singleroom implements Serializable{
 		this.gender = gender;
 	}
 
-	
+
 
 }

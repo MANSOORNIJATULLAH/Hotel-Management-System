@@ -6,7 +6,7 @@ public class HotelManagement{   //Lab2 the concept of access sprcifier, class im
 		
 		//Hotel hotel = new Hotel();
 		Scanner sc = new Scanner(System.in);
-	public:
+		
 		char wish;
 		int ch,ch2;
 

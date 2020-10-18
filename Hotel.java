@@ -1,6 +1,9 @@
 public class Hotel{
 
-	static void features(int i){
+	static holder hotel_ob = new holder();
+
+	static void features(int i){     //Lab4 The static Keyword 
+									//the concept of static function is implemented 
 
 		switch(i){
 			case 1:
@@ -19,5 +22,23 @@ public class Hotel{
                 System.out.println("Enter valid option");
                 break;
 		}
+	}
+
+
+
+
+
+	static void availability(int i){   //Lab2 the concept of member function is implemented here
+
+			int j, count = 0 ;
+
+			switch(i) {
+
+				case 1:
+					for (j=0; j<10; j++){
+						
+					}
+			}
+
 	}
 }
