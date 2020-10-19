@@ -26,7 +26,7 @@ public class Hotel{
 			name2 = sc.next();
 
 			System.out.print("Enter contact number: ");
-			gender2 = sc.next();
+			contact2 = sc.next();
 
 			System.out.println("Enter gender: ");
 			gender2 = sc.next();
@@ -77,8 +77,95 @@ static void bookroom(int i){
 					System.out.print(j+1+",");
 				}
 			}
-	}
-}
+
+			System.out.print("\nEnter room number: ");
+			try {
+				rn = sc.nextInt();
+				rn--;
+				if (hotel_ob.luxury_doubleroom[rn]!=null)
+					throw new NotAvailable();
+				CustDetails(i,rn);
+			}catch(Exception e){
+				System.out.println("Invalid option");
+				return;
+			}
+			break;
+
+		case 2:
+			for (j=0; j<hotel_ob.deluxe_doubleroom.length;j++){
+
+				if (hotel_ob.deluxe_doubleroom[j] == null){
+
+					System.out.print(j+11+",");
+				}
+			}
+
+			System.out.print("\nEnter room number: ");
+			try{
+
+				rn = sc.nextInt();
+				rn = rn-11;
+
+				if (hotel_ob.deluxe_doubleroom[rn] != null)
+					throw new NotAvailable();
+				CustDetails(1,rn);
+			}catch(Exception e){
+				System.out.println("Invalid option");
+				return;
+			}
+			break;
+
+		case 3:
+                  for(j=0;j<hotel_ob.luxury_singleroom.length;j++)
+                {
+                    if(hotel_ob.luxury_singleroom[j]==null)
+                    {
+                        System.out.print(j+31+",");
+                    }
+                }
+                System.out.print("\nEnter room number: ");
+                try{
+                rn=sc.nextInt();
+                rn=rn-31;
+                if(hotel_ob.luxury_singleroom[rn]!=null)
+                    throw new NotAvailable();
+                CustDetails(i,rn);
+                }
+                catch(Exception e)
+                {
+                    System.out.println("Invalid Option");
+                    return;
+                }
+                break;
+        case 4:
+                  for(j=0;j<hotel_ob.deluxe_singleroom.length;j++)
+                {
+                    if(hotel_ob.deluxe_singleroom[j]==null)
+                    {
+                        System.out.print(j+41+",");
+                    }
+                }
+                System.out.print("\nEnter room number: ");
+                try{
+                rn=sc.nextInt();
+                rn=rn-41;
+                if(hotel_ob.deluxe_singleroom[rn]!=null)
+                    throw new NotAvailable();
+                CustDetails(i,rn);
+                }
+                catch(Exception e)
+                {
+                   System.out.println("Invalid Option");
+                    return;
+                }
+                break;
+        default:
+                System.out.println("Enter valid option");
+                break;
+        }
+        System.out.println("Room Booked");
+	} //bookroom() 
+
 
 
 	static void features(int i){     //Lab4 The static Keyword 
