@@ -1,4 +1,4 @@
-import jav.util.Scanner;
+import java.util.Scanner;
 public class Hotel{
 
 	static Holder hotel_ob = new Holder();     //Lab4 the concept of static variable is completed 
@@ -25,7 +25,7 @@ public class Hotel{
 			System.out.print("Enter second customer name: ");
 			name2 = sc.next();
 
-			System.out.print("Enter contact number: ")
+			System.out.print("Enter contact number: ");
 			gender2 = sc.next();
 
 			System.out.println("Enter gender: ");
@@ -36,7 +36,7 @@ public class Hotel{
 		switch(i){
 
 			case 1:
-				hotel_ob.lauxry_doubleroom[rn] = new Doubleroom(name, contact, gender,name2,contact2,gender2);
+				hotel_ob.luxury_doubleroom[rn] = new Doubleroom(name, contact, gender,name2,contact2,gender2);
 				break;
 
 			case 2:
@@ -44,7 +44,7 @@ public class Hotel{
 				break;
 
 			case 3:
-				hotel_ob.lauxry_singleroom[rn] = new Singleroom(name, contact,gender);
+				hotel_ob.luxury_singleroom[rn] = new Singleroom(name, contact,gender);
 				break;
 
 			case 4:
@@ -54,7 +54,31 @@ public class Hotel{
 				System.out.println("Wrong option");
 
 		}
+	}   //CustDetails() 
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+static void bookroom(int i){
+
+	int j;
+	int rn;
+
+	System.out.println("\nChoose room number from : ");
+	switch(i) {
+		case 1:
+			for (j=0; j<hotel_ob.luxury_doubleroom.length ;j++) {
+				
+				if (hotel_ob.luxury_doubleroom[j] == null){
+					System.out.print(j+1+",");
+				}
+			}
 	}
+}
 
 
 	static void features(int i){     //Lab4 The static Keyword 
@@ -90,7 +114,7 @@ public class Hotel{
 			switch(i) {
 
 				case 1:
-					for(j=0;j<10;j++)
+					for(j=0;j<hotel_ob.luxury_doubleroom.length;j++)
                		{
                     	if(hotel_ob.luxury_doubleroom[j]==null)
                         count++;
@@ -121,7 +145,6 @@ public class Hotel{
 	                System.out.println("Enter valid option");
 	                break;
        		}
-        System.out.println("Number of rooms available : "+count);
+                 System.out.println("Number of rooms available : "+count);
 			}
 	}
-}

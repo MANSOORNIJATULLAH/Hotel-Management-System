@@ -1,5 +1,5 @@
 import java.io.Serializable;
-public class Doubleroom extends Singleroom implements Serializable{
+public class Doubleroom extends Singleroom implements Serializable{   //Lab7 The concept of Inheritance is implemented here
 
 	String name2;
 	String contact2;
@@ -12,7 +12,7 @@ public class Doubleroom extends Singleroom implements Serializable{
 		this.name2 = "";
 	}
 
-	Doubleroom(String name, String contact, String gender, String name2, String gender2){
+	Doubleroom(String name, String contact, String gender, String name2, String contact2, String gender2){
 		this.name = name;
 		this.contact=contact;
 		this.gender=gender;
