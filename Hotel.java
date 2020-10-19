@@ -1,6 +1,61 @@
+import jav.util.Scanner;
 public class Hotel{
 
-	static Holder hotel_ob = new Holder();
+	static Holder hotel_ob = new Holder();     //Lab4 the concept of static variable is completed 
+
+
+	static Scanner sc = new Scanner(System.in);
+	public static void CustDetails(int i, int rn){
+
+		String name, contact, gender;
+		String name2 = null, contact2 = null;
+		String gender2 = "";
+
+		System.out.print("Enter customer name: ");
+		name = sc.next();
+
+		System.out.print("Enter contact number: ");
+		contact = sc.next();
+
+		System.out.print("Enter gender: ");
+		gender = sc.next();
+
+		if (i < 3){
+
+			System.out.print("Enter second customer name: ");
+			name2 = sc.next();
+
+			System.out.print("Enter contact number: ")
+			gender2 = sc.next();
+
+			System.out.println("Enter gender: ");
+			gender2 = sc.next();
+
+		}
+
+		switch(i){
+
+			case 1:
+				hotel_ob.lauxry_doubleroom[rn] = new Doubleroom(name, contact, gender,name2,contact2,gender2);
+				break;
+
+			case 2:
+				hotel_ob.deluxe_doubleroom[rn] = new Doubleroom(name, contact, gender,name2,contact2,gender2);
+				break;
+
+			case 3:
+				hotel_ob.lauxry_singleroom[rn] = new Singleroom(name, contact,gender);
+				break;
+
+			case 4:
+				hotel_ob.deluxe_singleroom[rn] = new Singleroom(name, contact,gender);
+				break;
+			default:
+				System.out.println("Wrong option");
+
+		}
+	}
+
 
 	static void features(int i){     //Lab4 The static Keyword 
 									//the concept of static function is implemented 
@@ -22,7 +77,7 @@ public class Hotel{
                 System.out.println("Enter valid option");
                 break;
 		}
-	}
+	}  //features() function 
 
 
 
@@ -35,10 +90,38 @@ public class Hotel{
 			switch(i) {
 
 				case 1:
-					for (j=0; j<10; j++){
-
-					}
+					for(j=0;j<10;j++)
+               		{
+                    	if(hotel_ob.luxury_doubleroom[j]==null)
+                        count++;
+                	}
+               		 break;
+            	case 2:
+	                for(j=0;j<hotel_ob.deluxe_doubleroom.length;j++)
+	                {
+	                    if(hotel_ob.deluxe_doubleroom[j]==null)
+	                        count++;
+	                }
+               		 break;
+           		 case 3:
+	                for(j=0;j<hotel_ob.luxury_singleroom.length;j++)
+	                {
+	                    if(hotel_ob.luxury_singleroom[j]==null)
+	                        count++;
+	                }
+	                break;
+	            case 4:
+	                for(j=0;j<hotel_ob.deluxe_singleroom.length;j++)
+	                {
+	                    if(hotel_ob.deluxe_singleroom[j]==null)
+	                        count++;
+	                }
+	                break;
+	            default:
+	                System.out.println("Enter valid option");
+	                break;
+       		}
+        System.out.println("Number of rooms available : "+count);
 			}
-
 	}
 }
