@@ -32,6 +32,17 @@ public class HotelManagement{   //Lab2 the concept of access sprcifier, class im
                 Hotel.bookroom(ch2);
 				break;
 
+				case 4: 
+					System.out.print("Room Number -");
+					ch2 = sc.nextInt();
+					if (ch2 > 60)
+						System.out.println("Room doesn't exist");
+					else if(ch2>40)
+						Hotel.order(ch2-41,4);
+					else
+						System.out.println("Room doesn't exist");
+				break;
+				
 				default : System.out.println("Wrong selection!");
 				break;
 			}
