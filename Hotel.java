@@ -233,5 +233,54 @@ static void bookroom(int i){
 	                break;
        		}
                  System.out.println("Number of rooms available : "+count);
-			}
+
+
+			}   //availability() 
+
+
+	static void order(int rn, int rtype){
+		int i, q;
+		char wish;
+
+		try{
+			System.out.println("\n==========\n   Menu:  \n==========\n\n1.Sandwich\tRs.50\n2.Pasta\t\tRs.60\n3.Noodles\tRs.70\n4.Coke\t\tRs.30\n");
+        do{
+
+        	i = s.nextInt();
+        	System.out.print("Quantity- ");
+        	q=sc.nextInt();
+
+        	switch(rtype){
+        		case 1:
+        			hotel_ob.luxury_doubleroom[rn].food.add(new Food(i,q));
+        			break;
+        		case 2:
+        			hotel_ob.deluxe_doubleroom[rn].food.add(new Food(i,q));
+        			break;
+        		case 3:
+        			hotel_ob.luxury_singleroom[rn].food.add(new Food(i,q));
+        			break;
+        		case 4:
+        			hotel_ob.deluxe_singleroom[rn].food.add(new Food(i,q));
+        			break;
+
+        	}
+
+        	System.out.println("Do you want to order anything else? (y/n)");
+        	wish = sc.next().charAt(0);
+        }while(wish=='Y' || wish =='y');
+        	
+
+		}
+		catch(NullPointerException e){
+			System.out.println("\nRoom not booked");
+		}
+
+		catch(Exception e)
+		{
+			System.out.println("Cannot be done");
+		}
+	}
+
+
 	}
